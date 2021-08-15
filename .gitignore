@@ -1,0 +1,7 @@
+.DS_Store
+.vscode
+backend/db/*
+__pycache__
+node_modules/
+frontend/public/
+backend/db.sqlite3
