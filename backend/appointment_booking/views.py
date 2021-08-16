@@ -25,7 +25,9 @@ class PatientAppointmentViewSet(viewsets.ModelViewSet):
     queryset = PatientAppointment.objects.select_related('patient','appointment').all()
     serializer_class = PatientAppointmentSerializer
 
-
+# Since single appointment resource can be used only once for any patient
+# A separate model called PatientAppointment was created which has references to appointment and patient resource
+# By doing so user experience is enhanced as we need not to create appointment resource first and then patient resource
 class AppointmentViewSet(viewsets.ModelViewSet):
     queryset = Appointment.objects.all()
     serializer_class = AppointmentSerializer
